@@ -1,18 +1,1 @@
-@media (min-width: 320px) {
-  body{
-    background-color: teal;
-  }
-}
-
-@media (min-width: 1025px) {
-  body{
-    background-color: black;
-  }
-}
-
-@media (min-width: 1860px) {
-  body{
-    background-color:yellow;
-  }
-}
-/*# sourceMappingURL=global.css.map */
+/* No CSS *//*# sourceMappingURL=global.css.map */
