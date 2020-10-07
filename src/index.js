@@ -1,7 +1,6 @@
 import Vue from './lib/vue.js';
 import router from './routes/index.js';
 import App from './App.js';
-import HelloWorld from './view/HelloWorld.js'
 
 // existem dois meios de importar o css
 //dentro de cada componente ou no html index
