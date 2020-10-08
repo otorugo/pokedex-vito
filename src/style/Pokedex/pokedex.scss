@@ -1,13 +1,18 @@
 @media (min-width:320px) {
     #pokedex{
         background-color: cadetblue;
+        width: 100%;
         ul{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
             list-style: none;
         }
     }
 
 }
-@media (min-width:1025px) { 
+@media (min-width:1025px) {
 }
 @media (min-width:1860px) { 
 }

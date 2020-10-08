@@ -2,9 +2,11 @@ const Card = {
     name : 'card',
     template : `
         <div id="card" >
+            <div>
             <img :src="item.foto"></img>
             <p>{{item.name}}</p>
             <p>{{item.id}}</p>
+            </div>
             <ul>
                 <li v-for="(tipo,j) in item.types" :key="j" >
                     {{item.types[j].type.name}}

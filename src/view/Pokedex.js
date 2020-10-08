@@ -6,22 +6,37 @@ const Pokedex = {
     template : `
         <div id="pokedex">
             Pokedex aqui
-            <ul>    
-                <li v-for="(item,i) in arrayPokemon" :key="i" >
-                    <card
-                    :item=item
-                    />
-                </li>
-            </ul>
-        </div>
 
+            <div>
+                <div>
+                    <input type="text" placeholder="busca" v-model="pokeBusca"></input>
+                    <button @click="buscaPokemon"> buscar</button>
+                    <button @click="busca = false"> pokedex</button>
+                    <ul v-if="busca">
+                        <card :item=pokemonEncontrado>
+                        </card>
+                    </ul>
+                    <ul v-if="!busca">    
+                        <li v-for="(item,i) in arrayPokemon" :key="i" >
+                            <card :item=item>
+                            </card>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     `,
     components : {
         Card
     },
     data(){
         return{
-            arrayPokemon : []
+            arrayPokemon : [],
+            busca : false,
+            pokeName : null,
+            filtro : [],
+            pokeBusca : '',
+            pokemonEncontrado : null,
         }
     },
 
@@ -29,13 +44,11 @@ const Pokedex = {
         getPokemon : async function(){
 
             const lenArray = this.arrayPokemon.length+1
-            // console.log(lenArray);
 
             for (let index = lenArray; index < lenArray+20; index++) {
                 // console.log(index);
                 await axiosInstance.get(`/pokemon/${index}`)
                 .then((response)=>{
-                    console.log(response.data.types)
                     const pokeObj = {
                         name : response.data.name,
                         id : response.data.id,
@@ -44,38 +57,33 @@ const Pokedex = {
                         
                     }
                     this.arrayPokemon.push(pokeObj);
-
                 })
 
             }
+        },
+        buscaPokemon :  async function(){
+            this.busca  = true;
+            this.pokeBusca = this.pokeBusca.toLowerCase();
+            try{
+                await axiosInstance.get(`/pokemon/${this.pokeBusca}`)
+                .then((response)=>{
+                    this.pokemonEncontrado = {
+                        name : response.data.name,
+                        id : response.data.id,
+                        types : response.data.types,
+                        foto : `assets/${response.data.id}.png`,
+                    }
+                })
+                .catch((err)=>{
+                    console.log('Pokemon Não Encontrado');
+                })
+            }
+            catch(err){
+                console.log(err);
+            }
 
+        },
 
-
-            // await axiosInstance.get(`/pokemon?offset=${lenArray}&limit=20`)
-            // .then(async (response)=>{
-            //     // console.log(response.data);
-            //     for(const i of Object.keys(response.data.results)){
-                    
-            //         const num = Number(i)+1;
-            //         await axiosInstance.get(`/pokemon/${num}/`)
-            //         .then((result)=>{
-            //             const pokeData = {
-
-            //             }
-
-
-            //         }).catch((err)=>{
-            //             console.log(err);
-            //         })
-            //     }
-
-
-
-            // })
-            // .catch((err)=>{
-            //     console.log(err);
-            // });
-        }
     },
 
 
