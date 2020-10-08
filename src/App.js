@@ -5,6 +5,7 @@
 
 const Template = `
 <div>
+    Barra de Navegação
     <router-view/>
 </div>
 ` 

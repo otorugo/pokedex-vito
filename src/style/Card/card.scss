@@ -1,0 +1,28 @@
+@media (min-width:320px) {
+    #card{
+        width: max-content;
+        background-color: blue;
+        ul{
+            list-style: none;
+
+        }
+    }
+}
+@media (min-width:1025px) { 
+    #card{
+        background-color: blue;
+        ul{
+            list-style: none;
+
+        }
+    }
+}
+@media (min-width:1860px) {
+    #card{
+        background-color: blue;
+        ul{
+            list-style: none;
+
+        }
+    } 
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,MAAM,EAAE,SAAS,EAAE,KAAK;EACpB,AAAA,QAAQ,CAAA;IACJ,gBAAgB,EAAE,SAAS;GAI9B;EALD,AAEI,QAFI,CAEJ,EAAE,CAAA;IACE,UAAU,EAAE,IAAI;GACnB",
+    "sources": [
+        "pokedex.scss"
+    ],
+    "names": [],
+    "file": "pokedex.css"
+}

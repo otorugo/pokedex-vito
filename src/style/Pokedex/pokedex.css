@@ -1,0 +1,9 @@
+@media (min-width: 320px) {
+  #pokedex {
+    background-color: cadetblue;
+  }
+  #pokedex ul {
+    list-style: none;
+  }
+}
+/*# sourceMappingURL=pokedex.css.map */
