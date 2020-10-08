@@ -1,10 +1,10 @@
 @media (min-width: 320px) {
   #pokedex {
-    background-color: cadetblue;
     width: 100%;
   }
   #pokedex ul {
     padding: 2%;
+    margin-bottom: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

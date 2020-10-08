@@ -1,10 +1,18 @@
 $backgroundCard : #f8f8f8;
+$backgroundCardImage : #c2c2c2;
 
 
 @media (min-width:320px) {
     #card{
         width: max-content;
-        background-color: $backgroundCard;
+        // background-color: $backgroundCard;
+        border-radius: 5px 5px 5px 5px;
+        // box-shadow: inset 0 0  black;
+        img{
+            background-color: $backgroundCardImage;
+            border-radius: 5px 5px 5px 5px;
+            // box-shadow: inset 0 0 1em black;
+        }
         ul{
             list-style: none;
 

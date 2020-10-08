@@ -3,7 +3,11 @@
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    background-color: #f8f8f8;
+    border-radius: 5px 5px 5px 5px;
+  }
+  #card img {
+    background-color: #c2c2c2;
+    border-radius: 5px 5px 5px 5px;
   }
   #card ul {
     list-style: none;
