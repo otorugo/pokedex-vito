@@ -1,6 +1,10 @@
+$backgroundCard : #f8f8f8;
+
+
 @media (min-width:320px) {
     #card{
-        background-color: cornflowerblue;
+        width: max-content;
+        background-color: $backgroundCard;
         ul{
             list-style: none;
 

@@ -1,6 +1,9 @@
 @media (min-width: 320px) {
   #card {
-    background-color: cornflowerblue;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    background-color: #f8f8f8;
   }
   #card ul {
     list-style: none;

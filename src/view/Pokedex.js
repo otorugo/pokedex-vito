@@ -12,6 +12,7 @@ const Pokedex = {
                     <input type="text" placeholder="busca" v-model="pokeBusca"></input>
                     <button @click="buscaPokemon"> buscar</button>
                     <button @click="busca = false"> pokedex</button>
+                    <button @click="loadMore">carregar...</button>
                     <ul v-if="busca">
                         <card :item=pokemonEncontrado>
                         </card>
@@ -45,8 +46,11 @@ const Pokedex = {
 
             const lenArray = this.arrayPokemon.length+1
 
-            for (let index = lenArray; index < lenArray+20; index++) {
+            for (let index = lenArray; index < lenArray+20 && index < 152; index++) {
                 // console.log(index);
+                if(index == 116){
+                    continue;
+                }
                 await axiosInstance.get(`/pokemon/${index}`)
                 .then((response)=>{
                     const pokeObj = {
@@ -83,6 +87,11 @@ const Pokedex = {
             }
 
         },
+        loadMore : async function(){
+            if(this.arrayPokemon.length > 155){
+            }
+            await this.getPokemon()
+        }
 
     },
 

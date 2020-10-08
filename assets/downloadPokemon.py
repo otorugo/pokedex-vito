@@ -14,13 +14,13 @@ def download(response,output):
         if not imagem:
             break
         output.write(imagem)
-    print('Dowloaded {bytes}'.format(bytes=total_baixado))
+        print('Dowloaded {bytes}'.format(bytes=total_baixado))
 
 def kantoImagens():
     url = sys.argv[1]
 
 
-    for i in range(1,100):
+    for i in range(151,155):
         numeroPokemon = ''
         if(i < 10):
             numeroPokemon += "00"+str(i)+".png"
