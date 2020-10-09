@@ -3,3 +3,5 @@ const app = express();
 // const path = require('path');
 
 app.use(express.static('./docs'));
+
+app.listen(2020);
