@@ -22,4 +22,15 @@
 
 ----
 
+## Configs para Rodas App
 
+    Caso esteja usando o vscode na hora de testar, sugiro a extensão
+    Live Server.
+
+### Passos caso não use o Vscode
+
+```bash
+npm install
+npm start //ai a aplicação comeca a rodar na porta 2020
+
+```
