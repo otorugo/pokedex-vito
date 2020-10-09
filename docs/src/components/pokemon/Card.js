@@ -15,7 +15,6 @@ const Card = {
                     </li>
                 </ul>
             </div>
-            <link rel="stylesheet" href="public/src/style/Card/card.css">
         </div>
     
     `,
