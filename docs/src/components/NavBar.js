@@ -5,7 +5,6 @@ const NavBar = {
             <div>
                 DESAFIO POKEDEX
             </div>
-            <link rel="stylesheet" href="public/src/style/NavBar/navbar.css">
         </div>
     `
 }
