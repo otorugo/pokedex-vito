@@ -1,4 +1,4 @@
-import NavBar from '../src/components/NavBar.js';
+import NavBar from './components/NavBar.js';
 
 
 // Normalmente eu separo o template do export que é onde vai ter JS
