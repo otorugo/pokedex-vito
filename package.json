@@ -1,0 +1,26 @@
+{
+  "name": "inicio",
+  "version": "1.0.0",
+  "description": "## 1° Passo",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorhugol/pokedex-vito.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorhugol/pokedex-vito/issues"
+  },
+  "homepage": "https://github.com/victorhugol/pokedex-vito#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
