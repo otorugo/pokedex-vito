@@ -4,27 +4,26 @@ import axiosInstance from '../connection/index.js';
 const Pokedex = {
     name :'pokedex',
     template : `
-        <div id="pokedex">
-            Pokedex aqui
 
-            <div>
-                <div>
-                    <input type="text" placeholder="busca" v-model="pokeBusca"></input>
-                    <button @click="buscaPokemon"> buscar</button>
-                    <button @click="busca = false"> pokedex</button>
-                    <button @click="loadMore">carregar...</button>
-                    <ul v-if="busca">
-                        <card :item=pokemonEncontrado>
-                        </card>
-                    </ul>
-                    <ul v-if="!busca">    
-                        <li v-for="(item,i) in arrayPokemon" :key="i" >
-                            <card :item=item>
-                            </card>
-                        </li>
-                    </ul>
-                </div>
+        <div id="pokedex">
+            <div class="containerBusca">
+                <input type="text" placeholder="busca" v-model="pokeBusca"></input>
+                <button @click="buscaPokemon"> buscar</button>
+                <button @click="busca = false"> pokedex</button>
             </div>
+            <ul v-if="busca" class="ulCard">
+                <card :item=pokemonEncontrado>
+                </card>
+            </ul>
+
+
+            <ul v-if="!busca" class="ulCard">    
+                <li v-for="(item,i) in arrayPokemon" :key="i" >
+                    <card :item=item>
+                    </card>
+                </li>
+            </ul>
+            
         </div>
     `,
     components : {
@@ -42,11 +41,11 @@ const Pokedex = {
     },
 
     methods: {
-        getPokemon : async function(){
+        getPokemon : async function(quantidade){
 
             const lenArray = this.arrayPokemon.length+1
 
-            for (let index = lenArray; index < lenArray+20 && index < 152; index++) {
+            for (let index = lenArray; index < lenArray+quantidade && index < 153; index++) {
                 // console.log(index);
                 if(index == 116){
                     continue;
@@ -87,18 +86,25 @@ const Pokedex = {
             }
 
         },
+        load : async function(){
+            await this.getPokemon();
+        },
         loadMore : async function(){
-            if(this.arrayPokemon.length > 155){
-            }
-            await this.getPokemon()
+            // window.addEventListener('scroll',()=>{
+            //     if(window.scrollY > 1000 && this.arrayPokemon.length < 151){
+            //         this.getPokemon(20);
+            //     }
+            // });
         }
 
     },
-
-
     mounted: async function(){
-        await this.getPokemon();
+        this.loadMore();
+        await this.getPokemon(151);
     }
 }
+
+
+
 
 export default Pokedex;
